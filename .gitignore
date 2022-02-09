@@ -1,3 +1,9 @@
+# Generated html and pdf files
 *.html
 *.pdf
+# Export directory, default the vscode plugin
 export/
+# _static, default via reveal-md
+_static/
+# A directory for untracked assets
+untracked/

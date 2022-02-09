@@ -1,7 +1,5 @@
 # HPC Beyond Sheffield: JADE and Bede Presentation
 
-## HPC Beyond Sheffield: JADE and Bede
-
 > Alongside the local HPC facilities at The University of Sheffield, researchers can also access regional Tier-2 HPC facilities in the UK.
 > This talk will describe the Tier-2 HPC systems available to TUoS researchers, why using Tier-2 HPC can be beneficial and how these systems can be accessed and used.
 > There will be a focus on the JADE and Bede GPU-based Tier 2 systems which TUoS is affiliated with.
@@ -43,22 +41,26 @@ Exported to PDF
 + `Ctrl + Shift + p`
 + `Revealjs: Export in PDF`
 
-### Local NPM installation
+### Local nvm installation
 
-Install NPM
-
-```bash
-sudo apt install npm
-```
-
-Install dependencies
-
-```bash
-@todo
-```
-
-Build the slides
+1. Install `nvm` as described at [nvm-sh/nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+2. Install node via nvm 
+    ```bash
+        nvm install --lts
+    ```
+3. Install `reveal-md` via `npm`
+    ```bash
+        npm install -g reveal-md
+    ```
 
 ```bash
-@todo
+reveal-md slides.md --static _static --static-dirs=assets
 ```
+
+```bash
+reveal-md slides.md -w
+# Open in chrome without toolbars
+google-chrome --app="http://localhost:1948/slides.md"
+```
+
+Press S to open speaker view when running via the server.
