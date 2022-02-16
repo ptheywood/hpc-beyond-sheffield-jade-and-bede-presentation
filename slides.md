@@ -109,7 +109,7 @@ T2 are regional systems, usually larger or specialised
 T1 are national scale, very large systems
 T0 are international
 
---
+----
 
 ## UK Tier 2 HPC
 
@@ -137,7 +137,7 @@ as listed on the hpc-uk.ac.uk website
 
 Most of these can be accessed if appropriate
 
---
+----
 
 ## UK Tier 2 HPC
 
@@ -174,7 +174,7 @@ Which are free at the point of use, and open to all departments, as long as your
 
 [www.jade.ac.uk](https://www.jade.ac.uk)
 
---
+----
 
 ## JADE
 
@@ -188,7 +188,7 @@ NVIDIA V100 Max Q GPU + x86 CPUs
 
 **Free at point-of-use and open to all departments!**
 
---
+----
 
 63 NVIDIA MAXQ Deep Learning Systems
 
@@ -197,7 +197,7 @@ NVIDIA V100 Max Q GPU + x86 CPUs
 * Jobs can use up to a single node
 * Molecular Dynamics + Machine Learning
 
---
+----
 
 ## JADE
 
@@ -205,7 +205,7 @@ NVIDIA V100 Max Q GPU + x86 CPUs
 
 [www.jade.ac.uk](https://www.jade.ac.uk/)
 
---
+----
 
 ## JADE
 
@@ -224,7 +224,7 @@ NVIDIA V100 Max Q GPU + x86 CPUs
 
 [n8cir.org.uk/bede](n8cir.org.uk/bede/)
 
---
+----
 
 ## Bede
 
@@ -240,7 +240,7 @@ NVIDIA V100 Max Q GPU + x86 CPUs
 
 [Funded by EPSRC Grant EP/T022167/1](https://gow.epsrc.ukri.org/NGBOViewGrant.aspx?GrantRef=EP/T022167/1)
 
---
+----
 
 But Power9 CPU architecture prevents some workloads
 
@@ -250,7 +250,7 @@ But Power9 CPU architecture prevents some workloads
   * Although  none encountered so far.
 * Singularity containers must be built for Power9 hosts
 
---
+----
 
 ## Bede
 
@@ -258,7 +258,7 @@ But Power9 CPU architecture prevents some workloads
 
 [n8cir.org.uk/bede](https://n8cir.org.uk/bede/)
 
---
+----
 
 ## Bede
 
@@ -272,7 +272,7 @@ But Power9 CPU architecture prevents some workloads
 
 Note: When deciding which HPC resource is most appropriate, there are several things to consider.
 
---
+----
 
 ## Are my jobs allowed on the system?
 
@@ -288,7 +288,7 @@ For Bede and the local Tier 3 systems, any problem domain is allowed
 
 While JADE is limited to Machine Learning and Molecular Dynamics applications, although this will include a significant number of GPU workloads.
 
---
+----
 
 ## How many GPUs can I use at once?
 
@@ -314,7 +314,7 @@ If you only need a single GPU or a few GPUs within a single node, you can use an
 
 But if you need more than 4 modern GPUs, then JADE is appropriate up to 8, or you could use Bede for multi-node jobs.
 
---
+----
 
 ## Which system has the most GPUs?
 
@@ -335,7 +335,7 @@ But if you need more than 4 modern GPUs, then JADE is appropriate up to 8, or yo
 <br />
 <small>‡ Large multi-node jobs may queue for a <strong>very long</strong> time</small>
 
---
+----
 
 ## Does data movement slow down my jobs? <!-- .element: class="r-fit-text" -->
 
@@ -358,7 +358,7 @@ Note:
 
 [docs.hpc.shef.ac.uk/other-uk-hpc-resources/jade2.html](https://docs.hpc.shef.ac.uk/en/latest/other-uk-hpc-resources/jade2.html)
 
---
+----
 
 ### Getting Access: JADE
 
@@ -368,7 +368,7 @@ Note:
 
 Note: A member of the RSE team (probably Twin) will then be in touch.
 
---
+----
 
 ### Getting Access: JADE
 
@@ -378,7 +378,7 @@ Note: A member of the RSE team (probably Twin) will then be in touch.
 
 Note: More information can be found on the jade.ac.uk website
 
---
+----
 
 <!-- ### Getting Access: JADE -->
 
@@ -394,7 +394,7 @@ note: If in doubt, get in touch.
 
 [docs.hpc.shef.ac.uk/en/latest/other-uk-hpc-resources/bede.html](https://docs.hpc.shef.ac.uk/en/latest/other-uk-hpc-resources/bede.html)
 
---
+----
 
 ### Getting Access: Bede
 
@@ -404,7 +404,7 @@ note: If in doubt, get in touch.
 
 Note: Bede - fill in the form, get in touch if needed. Some restrictions.
 
---
+----
 
 ### Getting Access: Bede
 
@@ -418,7 +418,7 @@ Note: Bede - fill in the form, get in touch if needed. Some restrictions.
 
 This is a relatively thorough form, get in touch with us if you need any help.
 
---
+----
 
 tier-2-hpc-support-group@sheffield.ac.uk <!-- .element: class="r-fit-text" -->
 
@@ -436,7 +436,7 @@ note: If ShARC, Bessemer, Bede or Jade do not meet your needs, there are routes 
 
 The first place to look is the "Other UK hpc resources" page of docs.hpc.shef.ac.uk website
 
---
+----
 
 ### EPSRC Access to HPC Calls
 
@@ -452,7 +452,7 @@ note: EPRSC have been running calls for access ~ twice a year, for Tier 1 & Tier
 
 Note: Using the JADE and Bede is very similar to using Bessemer
 
---
+----
 
 ## Using JADE and Bede: SSH
 
@@ -473,7 +473,7 @@ ssh USERNAME@bessemer.shef.ac.uk
 
 Note: All systems are connected to via ssh
 
---
+----
 
 ## Using JADE and Bede: Module Environments
 
@@ -499,7 +499,7 @@ module show <module>
 
 [modules.readthedocs.io](https://modules.readthedocs.io/en/latest/)
 
---
+----
 
 ## Using JADE and Bede: Slurm
 
@@ -517,7 +517,7 @@ sbatch job.sh
 
 Note: The 3 systems all use Slurm for job scheduling, so commands are very similar
 
---
+----
 
 ## Using JADE and Bede: Batch Jobs
 
@@ -602,7 +602,7 @@ Note: Batch jobs are the prefferred (or only) mechanism for running GPU jobs on 
 
 In general, batch scripts will be very similar, but with small / subtle differences
 
---
+----
 
 ## Using JADE and Bede: Containers
 
@@ -653,7 +653,7 @@ You can also book a code-clinic session for a 1:1 chat about any programming pro
 
 <!-- .slide: data-visibility="uncounted"--->
 
---
+----
 
 ## How long can my jobs run for?
 
