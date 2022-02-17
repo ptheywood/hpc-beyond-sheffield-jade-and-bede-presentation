@@ -7,3 +7,5 @@ export/
 _static/
 # A directory for untracked assets
 untracked/
+# Python venv directory
+*venv/

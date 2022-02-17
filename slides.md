@@ -732,3 +732,15 @@ You can also book a code-clinic session for a 1:1 chat about any programming pro
 <br />
 
 Check-pointing can enable longer running experiments
+
+----
+
+## HECBioSim Benchmarking
+
+<!-- .slide: data-visibility="uncounted"--->
+<!-- .slide: data-background="#fff"--->
+
+![HECBioSim Gromacs 20 Single Node Single GPU Benchmark Data](assets/img/figures/hecbiosim-gromacs.png)
+![HECBioSim Amber 20 Single Node Single GPU Benchmark Data](assets/img/figures/hecbiosim-amber.png)
+
+[hecbiosim.ac.uk/access-hpc/benchmarks](https://www.hecbiosim.ac.uk/access-hpc/benchmarks) (Accessed 2022-02-17)
