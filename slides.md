@@ -10,8 +10,11 @@ revealOptions:
   slideNumber: 'c'
 ---
 
-<!-- markdownlint-disable MD033 -->
 <!-- markdownlint-disable MD025 -->
+<!-- markdownlint-disable MD026 -->
+<!-- markdownlint-disable MD033 -->
+<!-- markdownlint-disable MD035 -->
+<!-- markdownlint-disable MD036 -->
 
 <style type="text/css">
 .logo-grid-ish img {
@@ -76,6 +79,7 @@ img.web-screenshot {
 </style>
 
 # HPC Beyond Sheffield:
+
 # JADE and Bede
 
 <br />
@@ -161,8 +165,6 @@ Most of these can be accessed if appropriate
 <!-- .slide: data-transition="fade-in" -->
 <!-- .slide: class="logo-grid-ish" -->
 
-<!-- @todo - use css  propperly rather than horrible per element height and opacity. -->
-
 ![Baskerville.ac.uk](assets/img/logos/baskerville-logo-light.svg) <!-- .element: class="very-faded"-->
 ![CIRRUS at EPCC](assets/img/logos/cirrus_PoweredbyEPCC.png) <!-- .element: class="very-faded"-->
 ![Cambridge Service for Data Driven Discovery](assets/img/logos/cambridge_logo.jpg) <!-- .element: class="very-faded"-->
@@ -176,7 +178,6 @@ Most of these can be accessed if appropriate
 ![Sulis at HPC Midlands](assets/img/logos/hpcmidplus_logo.png) <!-- .element: class="very-faded"-->
 
 [hpc-uk.ac.uk/facilities/](https://www.hpc-uk.ac.uk/facilities/)
-
 
 note: But at sheffield we have more-direct access to the JADE and Bede systems
 
@@ -313,8 +314,6 @@ Not all applications are POWER9 compatible
 
 i.e no MATLAB
 
-
-
 ----
 
 ## Bede
@@ -412,8 +411,6 @@ But if you need more than 4 modern GPUs, then JADE is appropriate up to 8, or yo
 <br />
 <br />
 <small>* Some UoS GPU nodes support GPU-GPU NVLink</small>
-
-Note: 
 
 ---
 
@@ -720,6 +717,20 @@ You can also book a code-clinic session for a 1:1 chat about any programming pro
 
 ----
 
+## HECBioSim Benchmarking
+
+<!-- .slide: data-visibility="uncounted"--->
+<!-- .slide: data-background="#fff"--->
+
+![HECBioSim Gromacs 20 Single Node Single GPU Benchmark Data](assets/img/figures/hecbiosim-gromacs.png)
+![HECBioSim Amber 20 Single Node Single GPU Benchmark Data](assets/img/figures/hecbiosim-amber.png)
+
+[hecbiosim.ac.uk/access-hpc/benchmarks](https://www.hecbiosim.ac.uk/access-hpc/benchmarks)
+
+<small>Data accessed 2022-02-17</small>
+
+----
+
 ## How long can my jobs run for?
 
 <!-- .slide: data-visibility="uncounted"--->
@@ -732,15 +743,3 @@ You can also book a code-clinic session for a 1:1 chat about any programming pro
 <br />
 
 Check-pointing can enable longer running experiments
-
-----
-
-## HECBioSim Benchmarking
-
-<!-- .slide: data-visibility="uncounted"--->
-<!-- .slide: data-background="#fff"--->
-
-![HECBioSim Gromacs 20 Single Node Single GPU Benchmark Data](assets/img/figures/hecbiosim-gromacs.png)
-![HECBioSim Amber 20 Single Node Single GPU Benchmark Data](assets/img/figures/hecbiosim-amber.png)
-
-[hecbiosim.ac.uk/access-hpc/benchmarks](https://www.hecbiosim.ac.uk/access-hpc/benchmarks) (Accessed 2022-02-17)
