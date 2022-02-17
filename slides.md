@@ -55,13 +55,28 @@ div.three-col > .one-third h3 {
   text-transform: none;
 }
 
+.reveal h2 {
+  font-size: 1.8em;
+}
+
 .reveal .bigger-content p {
   font-size: 3.6rem;
 }
+
+img.web-screenshot {
+  width: 1600px;
+  height: 900px;
+  margin: 0px auto;
+}
+
+.reveal p {
+  margin: 16px 0;
+}
+
 </style>
 
-# HPC Beyond Sheffield: 
-# JADE and Bede 
+# HPC Beyond Sheffield:
+# JADE and Bede
 
 <br />
 
@@ -72,7 +87,8 @@ Research Software Engineer
 [![GitHub Mark](assets/img/logos/GitHub-Mark-Light-64px.png) <!-- .element: style="vertical-align:middle; height:48px;" --> github.com/ptheywood](https://github.com/ptheywood)
 
 note:
-Introduce self
+
+Overview.
 
 * Tier 2 HPC Overview
 * JADE
@@ -178,24 +194,36 @@ Which are free at the point of use, and open to all departments, as long as your
 
 ## JADE
 
-Joint Academic Data Science Endeavour (JADE)
+*Joint Academic Data Science Endeavour*
 
 Machine Learning and Molecular Dynamics
 
-NVIDIA V100 Max Q GPU + x86 CPUs
+NVIDIA’s DGX-MAX-Q Deep Learning System
+
+<br />
 
 [Funded by EPSRC Grant EP/T022205/1](https://gow.epsrc.ukri.org/NGBOViewGrant.aspx?GrantRef=EP/T022205/1)
+
+Consortium led by Oxford University
 
 **Free at point-of-use and open to all departments!**
 
 ----
 
-63 NVIDIA MAXQ Deep Learning Systems
+## JADE
 
-* Intel + V100 max-Q
-* 8 GPUs per node
-* Jobs can use up to a single node
-* Molecular Dynamics + Machine Learning
+<!-- .slide: data-background="./assets/img/thirdparty/nvidia-dgx-exploded.jpg" -->
+<!-- .slide: data-background-opacity="0.1" -->
+
+63 Nodes
+
+2 CPUs per node (20 cores each)
+
+8 NVIDIA V100 Max-Q GPUs per node with NVLink
+
+4 TB of SSD per node
+
+Up to 8 GPUs per Job
 
 ----
 
@@ -219,7 +247,6 @@ NVIDIA V100 Max Q GPU + x86 CPUs
 
 <!-- .slide: data-background="#ffffff" -->
 
-<!-- ![N8 Computationally Intensive Research Bede](assets/img/logos/2020_11_10_bede_ro.png) -->
 ![N8 Computationally Intensive Research Bede](assets/img/logos/2020_11_10_bede_cmyk.png)
 
 [n8cir.org.uk/bede](n8cir.org.uk/bede/)
@@ -228,33 +255,71 @@ NVIDIA V100 Max Q GPU + x86 CPUs
 
 ## Bede
 
-**Free at point-of-use and open to all departments!**
+Any GPU workload
 
-* N8 CIR
-* Power 9 + V100 with NVLink between CPU and GPU
-* 4 GPUs per node
-* 32 V100 nodes (+ 4 T4 Nodes)
-* multi-node jobs supported!
-* Any GPU workload!
-* Especially well suited for large distributed workloads + workloads which move a lot of data to / from CPU
+IBM Power System AC922 & IC922
+
+**Power 9 architecture is unique within UK Tier 2 HPC**
+
+<br />
 
 [Funded by EPSRC Grant EP/T022167/1](https://gow.epsrc.ukri.org/NGBOViewGrant.aspx?GrantRef=EP/T022167/1)
 
-----
+N8 Centre of Excellence in Computationally Intensive Research (N8 CIR)
 
-But Power9 CPU architecture prevents some workloads
-
-* Not all software available
-  * I.e. Matlab does not support IBM Power systems.
-* Potential compilation issues
-  * Although  none encountered so far.
-* Singularity containers must be built for Power9 hosts
+**Free at point-of-use and open to all departments!**
 
 ----
 
 ## Bede
 
-![https://n8cir.org.uk/bede/ Screenshot](/assets/img/website-screenshots/n8cir.org.uk/bede.png) <!-- .element: width="1600px" -->
+**32 nodes with:**
+
+2 POWER9 CPUs per node, with NVLink
+
+4 NVIDIA Tesla V100 32G GPUs with NVLink
+
+512 GB DDR4 RAM
+
+<br />
+
+**4 nodes with:**
+
+2 POWER9 CPUs per node
+
+4 NVIDIA Tesla T4 GPUs
+
+256GB DDR4
+
+<br />
+
+**Multi-node jobs are supported**
+
+----
+
+## Bede
+
+**Well-suited for:**
+
+Large problems requiring many GPUs (multiple nodes)
+
+Large volumes of CPU-GPU data movement (NVLink)
+
+<br />
+
+**However:**
+
+Not all applications are POWER9 compatible
+
+.i.e no MATLAB
+
+
+
+----
+
+## Bede
+
+![https://n8cir.org.uk/bede/ Screenshot](/assets/img/website-screenshots/n8cir.org.uk/bede.png) <!-- .element: class="web-screenshot" -->
 
 [n8cir.org.uk/bede](https://n8cir.org.uk/bede/)
 
@@ -398,7 +463,7 @@ note: If in doubt, get in touch.
 
 ### Getting Access: Bede
 
-![https://n8cir.org.uk/supporting-research/facilities/bede/docs/bede_registrations/ Screenshot](assets/img/website-screenshots/n8cir.org.uk/docs-bede_registrations.png)
+![https://n8cir.org.uk/supporting-research/facilities/bede/docs/bede_registrations/ Screenshot](assets/img/website-screenshots/n8cir.org.uk/docs-bede_registrations.png) <!-- .element: class="web-screenshot" -->
 
 [n8cir.org.uk/supporting-research/facilities/bede/docs/bede_registrations](https://n8cir.org.uk/supporting-research/facilities/bede/docs/bede_registrations/)
 
@@ -410,7 +475,7 @@ Note: Bede - fill in the form, get in touch if needed. Some restrictions.
 
 <!-- <iframe src="https://n8cir.org.uk/supporting-research/facilities/bede/bede-application/" height="900" width="1600"></iframe> -->
 
-![Bede Application Form Screenshot](assets/img/website-screenshots/n8cir.org.uk/docs-bede-applications.png)
+![Bede Application Form Screenshot](assets/img/website-screenshots/n8cir.org.uk/docs-bede-applications.png) <!-- .element: class="web-screenshot" -->
 
 [n8cir.org.uk/supporting-research/facilities/bede/bede-application](https://n8cir.org.uk/supporting-research/facilities/bede/bede-application/)
 
