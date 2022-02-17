@@ -17,8 +17,11 @@
     <div class="reveal">
       <div class="slides"><section  data-markdown><script type="text/template">
 
-<!-- markdownlint-disable MD033 -->
 <!-- markdownlint-disable MD025 -->
+<!-- markdownlint-disable MD026 -->
+<!-- markdownlint-disable MD033 -->
+<!-- markdownlint-disable MD035 -->
+<!-- markdownlint-disable MD036 -->
 
 <style type="text/css">
 .logo-grid-ish img {
@@ -83,6 +86,7 @@ img.web-screenshot {
 </style>
 
 # HPC Beyond Sheffield:
+
 # JADE and Bede
 
 <br />
@@ -157,8 +161,6 @@ T0 are international</p>
 <!-- .slide: data-transition="fade-in" -->
 <!-- .slide: class="logo-grid-ish" -->
 
-<!-- @todo - use css  propperly rather than horrible per element height and opacity. -->
-
 ![Baskerville.ac.uk](assets/img/logos/baskerville-logo-light.svg) <!-- .element: class="very-faded"-->
 ![CIRRUS at EPCC](assets/img/logos/cirrus_PoweredbyEPCC.png) <!-- .element: class="very-faded"-->
 ![Cambridge Service for Data Driven Discovery](assets/img/logos/cambridge_logo.jpg) <!-- .element: class="very-faded"-->
@@ -172,7 +174,6 @@ T0 are international</p>
 ![Sulis at HPC Midlands](assets/img/logos/hpcmidplus_logo.png) <!-- .element: class="very-faded"-->
 
 [hpc-uk.ac.uk/facilities/](https://www.hpc-uk.ac.uk/facilities/)
-
 
 <aside class="notes"><p>But at sheffield we have more-direct access to the JADE and Bede systems</p>
 <p>Which are free at the point of use, and open to all departments, as long as your project fits certain criteria</p>
@@ -289,8 +290,6 @@ Large volumes of CPU-GPU data movement (NVLink)
 Not all applications are POWER9 compatible
 
 i.e no MATLAB
-
-
 </script></section><section data-markdown><script type="text/template">
 ## Bede
 
@@ -370,8 +369,7 @@ i.e no MATLAB
 <br />
 <br />
 <small>* Some UoS GPU nodes support GPU-GPU NVLink</small>
-
-<aside class="notes"></aside></script></section></section><section ><section data-markdown><script type="text/template">
+</script></section></section><section ><section data-markdown><script type="text/template">
 ### Getting Access: JADE
 
 <iframe src="https://docs.hpc.shef.ac.uk/en/latest/other-uk-hpc-resources/jade2.html" height="900" width="1600"></iframe>
@@ -625,12 +623,24 @@ Book a Code Clinic:
 ![The University of Sheffield Logo](assets/img/logos/TUOS_PRIMARY_LOGO_FULL_COLOUR.png) <!-- .element: height="180px;" -->
 
 <aside class="notes"><p>If you need to find any more information, head to the Sheffield HPC Documentation as a first point of call.</p>
-<p>Alternatively, email <a href="mailto:&#x74;&#x69;&#101;&#114;&#45;&#50;&#45;&#104;&#112;&#99;&#x2d;&#x73;&#117;&#112;&#112;&#x6f;&#x72;&#x74;&#45;&#103;&#114;&#x6f;&#117;&#x70;&#x40;&#x73;&#104;&#101;&#x66;&#x66;&#x69;&#x65;&#x6c;&#x64;&#x2e;&#97;&#99;&#x2e;&#117;&#x6b;">&#x74;&#x69;&#101;&#114;&#45;&#50;&#45;&#104;&#112;&#99;&#x2d;&#x73;&#117;&#112;&#112;&#x6f;&#x72;&#x74;&#45;&#103;&#114;&#x6f;&#117;&#x70;&#x40;&#x73;&#104;&#101;&#x66;&#x66;&#x69;&#x65;&#x6c;&#x64;&#x2e;&#97;&#99;&#x2e;&#117;&#x6b;</a> which will reach a member of the RSE group or IT Services.</p>
+<p>Alternatively, email <a href="mailto:&#x74;&#105;&#x65;&#114;&#45;&#50;&#x2d;&#x68;&#x70;&#99;&#x2d;&#x73;&#117;&#112;&#x70;&#111;&#x72;&#x74;&#x2d;&#x67;&#x72;&#x6f;&#117;&#112;&#64;&#x73;&#104;&#101;&#x66;&#x66;&#x69;&#x65;&#x6c;&#x64;&#46;&#97;&#99;&#46;&#117;&#x6b;">&#x74;&#105;&#x65;&#114;&#45;&#50;&#x2d;&#x68;&#x70;&#99;&#x2d;&#x73;&#117;&#112;&#x70;&#111;&#x72;&#x74;&#x2d;&#x67;&#x72;&#x6f;&#117;&#112;&#64;&#x73;&#104;&#101;&#x66;&#x66;&#x69;&#x65;&#x6c;&#x64;&#46;&#97;&#99;&#46;&#117;&#x6b;</a> which will reach a member of the RSE group or IT Services.</p>
 <p>You can also book a code-clinic session for a 1:1 chat about any programming problems, or advice on best practice or using HPC.</p>
 </aside></script></section><section ><section data-markdown><script type="text/template">
 ## Extra Slides
 
 <!-- .slide: data-visibility="uncounted"--->
+</script></section><section data-markdown><script type="text/template">
+## HECBioSim Benchmarking
+
+<!-- .slide: data-visibility="uncounted"--->
+<!-- .slide: data-background="#fff"--->
+
+![HECBioSim Gromacs 20 Single Node Single GPU Benchmark Data](assets/img/figures/hecbiosim-gromacs.png)
+![HECBioSim Amber 20 Single Node Single GPU Benchmark Data](assets/img/figures/hecbiosim-amber.png)
+
+[hecbiosim.ac.uk/access-hpc/benchmarks](https://www.hecbiosim.ac.uk/access-hpc/benchmarks)
+
+<small>Data accessed 2022-02-17</small>
 </script></section><section data-markdown><script type="text/template">
 ## How long can my jobs run for?
 
@@ -644,16 +654,7 @@ Book a Code Clinic:
 <br />
 
 Check-pointing can enable longer running experiments
-</script></section><section data-markdown><script type="text/template">
-## HECBioSim Benchmarking
-
-<!-- .slide: data-visibility="uncounted"--->
-<!-- .slide: data-background="#fff"--->
-
-![HECBioSim Gromacs 20 Single Node Single GPU Benchmark Data](assets/img/figures/hecbiosim-gromacs.png)
-![HECBioSim Amber 20 Single Node Single GPU Benchmark Data](assets/img/figures/hecbiosim-amber.png)
-
-[hecbiosim.ac.uk/access-hpc/benchmarks](https://www.hecbiosim.ac.uk/access-hpc/benchmarks) (Accessed 2022-02-17)</script></section></section></div>
+</script></section></section></div>
     </div>
 
     <script src="./dist/reveal.js"></script>
