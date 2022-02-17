@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <title>HPC Beyond Sheffield: JADE and Bede</title>
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="stylesheet" href="./dist/reset.css" />
+    <link rel="stylesheet" href="./dist/reveal.css" />
+    <link rel="stylesheet" href="./dist/theme/night.css" id="theme" />
+    <link rel="stylesheet" href="./css/highlight/dracula.css" />
+
+
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides"><section  data-markdown><script type="text/template">
+
+<!-- markdownlint-disable MD033 -->
+<!-- markdownlint-disable MD025 -->
+
+<style type="text/css">
+.logo-grid-ish img {
+  height: 140px;
+  margin: 32px;
+}
+.logo-grid-ish img.very-faded {
+  opacity: 0.05;
+}
+
+.reveal pre.code-wrapper {
+  width: 55%;
+  margin: 64px auto;
+}
+.reveal pre.code-wrapper > code {
+  padding: 2rem;
+  font-size: 2rem;
+  line-height: 2.1rem;
+  max-height: 800px;
+}
+
+div.three-col {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+div.three-col > .one-third {
+  flex-grow: 1;
+  width: 33%;
+}
+.reveal div.three-col pre.code-wrapper {
+  width: 95%;
+  margin: 16px auto;
+}
+
+div.three-col > .one-third h3 {
+  font-size: 2.5rem;
+}
+
+.reveal h2, .reveal h3, .reveal h4 {
+  text-transform: none;
+}
+
+.reveal h2 {
+  font-size: 1.8em;
+}
+
+.reveal .bigger-content p {
+  font-size: 3.6rem;
+}
+
+img.web-screenshot {
+  width: 1600px;
+  height: 900px;
+  margin: 0px auto;
+}
+
+.reveal p {
+  margin: 16px 0;
+}
+
+</style>
+
+# HPC Beyond Sheffield:
+# JADE and Bede
+
+<br />
+
+Peter Heywood
+
+Research Software Engineer
+
+[![GitHub Mark](assets/img/logos/GitHub-Mark-Light-64px.png) <!-- .element: style="vertical-align:middle; height:48px;" --> github.com/ptheywood](https://github.com/ptheywood)
+
+<aside class="notes"><p>Overview.</p>
+<ul>
+<li>Tier 2 HPC Overview</li>
+<li>JADE</li>
+<li>Bede</li>
+<li>Which HPC Resource Should I Use?</li>
+<li>Accessing Tier 2 HPC Resources</li>
+<li>Using Tier 2 HPC</li>
+</ul>
+</aside></script></section><section  data-markdown><script type="text/template">
+## Overview
+
+<!-- .slide: data-visibility="hidden" -->
+
+* Tier 2 HPC Overview
+* JADE
+* Bede
+* Which HPC Resource Should I Use?
+* Accessing Tier 2 HPC Resources
+* Using Tier 2 HPC
+</script></section><section ><section data-markdown><script type="text/template">
+## UK HPC Tiers
+
+<!-- .slide: data-background="#ffffff" -->
+
+![EPSRC Tier 2 HPC Strategy Tier Diagram](assets/img/thirdparty/epsrc-tier2hpcstrategy-figure1.png)
+
+[Source: epsrc.ukri.org/files/research/tier2hpcstrategy](https://epsrc.ukri.org/files/research/tier2hpcstrategy/)
+
+<aside class="notes"><p>T3 local like ShARC and Bessemer
+T2 are regional systems, usually larger or specialised
+T1 are national scale, very large systems
+T0 are international</p>
+</aside></script></section><section data-markdown><script type="text/template">
+## UK Tier 2 HPC
+
+<!-- .slide: data-background="#ffffff" -->
+<!-- .slide: data-transition="slide-in fade-out" -->
+<!-- .slide: class="logo-grid-ish" -->
+
+![Baskerville.ac.uk](assets/img/logos/baskerville-logo-light.svg)
+![CIRRUS at EPCC](assets/img/logos/cirrus_PoweredbyEPCC.png)
+![Cambridge Service for Data Driven Discovery](assets/img/logos/cambridge_logo.jpg)
+
+![Isambard at GW4](assets/img/logos/GW4-logo_CMYK.jpg)
+![JADE](assets/img/logos/jade_logo.png)
+![Materials And Molecular Modelling Hub](assets/img/logos/mmmhubtransred.png)
+
+![Northern Ireland HPC](assets/img/logos/nihpc.png)
+![N8 Computationally Intensive Research Bede](assets/img/logos/2020_11_10_bede_cmyk.png)
+![Sulis at HPC Midlands](assets/img/logos/hpcmidplus_logo.png)
+
+[hpc-uk.ac.uk/facilities/](https://www.hpc-uk.ac.uk/facilities/)
+
+<aside class="notes"><p>These are some of the Tier-2 facilities in the UK</p>
+<p>as listed on the hpc-uk.ac.uk website</p>
+<p>Most of these can be accessed if appropriate</p>
+</aside></script></section><section data-markdown><script type="text/template">
+## UK Tier 2 HPC
+
+<!-- .slide: data-background="#ffffff" -->
+<!-- .slide: data-transition="fade-in" -->
+<!-- .slide: class="logo-grid-ish" -->
+
+<!-- @todo - use css  propperly rather than horrible per element height and opacity. -->
+
+![Baskerville.ac.uk](assets/img/logos/baskerville-logo-light.svg) <!-- .element: class="very-faded"-->
+![CIRRUS at EPCC](assets/img/logos/cirrus_PoweredbyEPCC.png) <!-- .element: class="very-faded"-->
+![Cambridge Service for Data Driven Discovery](assets/img/logos/cambridge_logo.jpg) <!-- .element: class="very-faded"-->
+
+![Isambard at GW4](assets/img/logos/GW4-logo_CMYK.jpg) <!-- .element: class="very-faded" -->
+![JADE](assets/img/logos/jade_logo.png)
+![Materials And Molecular Modelling Hub](assets/img/logos/mmmhubtransred.png) <!-- .element: class="very-faded"-->
+
+![Northern Ireland HPC](assets/img/logos/nihpc.png) <!-- .element: class="very-faded"-->
+![N8 Computationally Intensive Research Bede](assets/img/logos/2020_11_10_bede_cmyk.png)
+![Sulis at HPC Midlands](assets/img/logos/hpcmidplus_logo.png) <!-- .element: class="very-faded"-->
+
+[hpc-uk.ac.uk/facilities/](https://www.hpc-uk.ac.uk/facilities/)
+
+
+<aside class="notes"><p>But at sheffield we have more-direct access to the JADE and Bede systems</p>
+<p>Which are free at the point of use, and open to all departments, as long as your project fits certain criteria</p>
+</aside></script></section></section><section ><section data-markdown><script type="text/template">
+<!-- .slide: data-background="#ffffff" -->
+
+![JADE](assets/img/logos/jade_logo.png)
+
+[www.jade.ac.uk](https://www.jade.ac.uk)
+</script></section><section data-markdown><script type="text/template">
+## JADE
+
+*Joint Academic Data Science Endeavour*
+
+Machine Learning and Molecular Dynamics
+
+NVIDIA’s DGX-MAX-Q Deep Learning System
+
+<br />
+
+[Funded by EPSRC Grant EP/T022205/1](https://gow.epsrc.ukri.org/NGBOViewGrant.aspx?GrantRef=EP/T022205/1)
+
+Consortium led by Oxford University
+
+**Free at point-of-use and open to all departments!**
+</script></section><section data-markdown><script type="text/template">
+## JADE
+
+<!-- .slide: data-background="./assets/img/thirdparty/nvidia-dgx-exploded.jpg" -->
+<!-- .slide: data-background-opacity="0.1" -->
+
+63 Nodes
+
+2 CPUs per node (20 cores each)
+
+8 NVIDIA V100 Max-Q GPUs per node with NVLink
+
+4 TB of SSD per node
+
+Up to 8 GPUs per Job
+</script></section><section data-markdown><script type="text/template">
+## JADE
+
+<iframe src="http://www.jade.ac.uk/" height="900" width="1600"></iframe>
+
+[www.jade.ac.uk](https://www.jade.ac.uk/)
+</script></section><section data-markdown><script type="text/template">
+## JADE
+
+<iframe src="http://docs.jade.ac.uk/" height="900" width="1600"></iframe>
+
+[docs.jade.ac.uk](https://docs.jade.ac.uk/)
+</script></section></section><section ><section data-markdown><script type="text/template">
+<!-- ## Bede -->
+
+<!-- .slide: data-background="#ffffff" -->
+
+![N8 Computationally Intensive Research Bede](assets/img/logos/2020_11_10_bede_cmyk.png)
+
+[n8cir.org.uk/bede](n8cir.org.uk/bede/)
+</script></section><section data-markdown><script type="text/template">
+## Bede
+
+Any GPU workload
+
+IBM Power System AC922 & IC922
+
+**Power 9 architecture is unique within UK Tier 2 HPC**
+
+<br />
+
+[Funded by EPSRC Grant EP/T022167/1](https://gow.epsrc.ukri.org/NGBOViewGrant.aspx?GrantRef=EP/T022167/1)
+
+N8 Centre of Excellence in Computationally Intensive Research (N8 CIR)
+
+**Free at point-of-use and open to all departments!**
+</script></section><section data-markdown><script type="text/template">
+## Bede
+
+**32 nodes with:**
+
+2 POWER9 CPUs per node, with NVLink
+
+4 NVIDIA Tesla V100 32G GPUs with NVLink
+
+512 GB DDR4 RAM
+
+<br />
+
+**4 nodes with:**
+
+2 POWER9 CPUs per node
+
+4 NVIDIA Tesla T4 GPUs
+
+256GB DDR4
+
+<br />
+
+**Multi-node jobs are supported**
+</script></section><section data-markdown><script type="text/template">
+## Bede
+
+**Well-suited for:**
+
+Large problems requiring many GPUs (multiple nodes)
+
+Large volumes of CPU-GPU data movement (NVLink)
+
+<br />
+
+**However:**
+
+Not all applications are POWER9 compatible
+
+.i.e no MATLAB
+
+
+</script></section><section data-markdown><script type="text/template">
+## Bede
+
+![https://n8cir.org.uk/bede/ Screenshot](/assets/img/website-screenshots/n8cir.org.uk/bede.png) <!-- .element: class="web-screenshot" -->
+
+[n8cir.org.uk/bede](https://n8cir.org.uk/bede/)
+</script></section><section data-markdown><script type="text/template">
+## Bede
+
+<iframe src="https://bede-documentation.readthedocs.io" height="900" width="1600"></iframe>
+
+[bede-documentation.readthedocs.io](https://bede-documentation.readthedocs.io)
+</script></section></section><section ><section data-markdown><script type="text/template">
+## Which GPU HPC Resource Should I Use?
+
+<aside class="notes"><p>When deciding which HPC resource is most appropriate, there are several things to consider.</p>
+</aside></script></section><section data-markdown><script type="text/template">
+## Are my jobs allowed on the system?
+
+| Domain                 | JADE     | Bede     |     TUoS |
+|------------------------|:--------:|:--------:|:--------:|
+| **Machine Learning**   | &#10003; | &#10003; | &#10003; |
+| **Molecular Dynamics** | &#10003; | &#10003; | &#10003; |
+| **Other**              | &#10008; | &#10003; | &#10003; |
+
+<aside class="notes"><p>Is my workload allowed on the cluster?</p>
+<p>For Bede and the local Tier 3 systems, any problem domain is allowed</p>
+<p>While JADE is limited to Machine Learning and Molecular Dynamics applications, although this will include a significant number of GPU workloads.</p>
+</aside></script></section><section data-markdown><script type="text/template">
+## How many GPUs can I use at once?
+
+| Scale                           | JADE     | Bede     | TUoS                                  |
+|---------------------------------|:--------:|:--------:|:-------------------------------------:|
+| **CPU-only**                    | &#10008; | &#10008; | &#10003;<sup><code>&nbsp</code></sup> |
+| **Single-GPU**                  | &#10003; | &#10003; | &#10003;<sup><code>&nbsp</code></sup> |
+| **Single-Node Multi-GPU**       | 8        | 4        | 4<sup><code>*</code></sup>            |
+| **Multi-Node &nbsp; Multi-GPU** | &#10008; | &#10003; | &#10008;<sup><code>†</code></sup>     |
+
+<br />
+<br />
+<small>* ShARC's K80 nodes contain 8 GPUs and private P100 node contains 7 GPUs. </small>
+
+<br />
+<small>† ShARC's K80 nodes support multi-node. Bessemer's V100 nodes do not.</small>
+
+<aside class="notes"><p>How many GPUs do my jobs need or benefit from?</p>
+<p>If you do not need GPUs, then neither of the easy-access T2 systems are appropriate.</p>
+<p>If you only need a single GPU or a few GPUs within a single node, you can use any of the systems</p>
+<p>But if you need more than 4 modern GPUs, then JADE is appropriate up to 8, or you could use Bede for multi-node jobs.</p>
+</aside></script></section><section data-markdown><script type="text/template">
+## Which system has the most GPUs?
+
+| GPU Capacity        | JADE     | Bede                                | Bessemer | Private Bessemer* |
+|---------------------|---------:|------------------------------------:|---------:|------------------:|
+| **GPU Nodes**       |       63 |    38<sup><code>†</code></sup>      |        1 |                12 |
+| **GPUs per Node**   |        8 |     4<sup><code>&nbsp;</code></sup> |        4 |                 4 |
+| **Total GPUs**      |      504 |   152<sup><code>&nbsp;</code></sup> |        4 |                48 |
+| **Maximum per Job** |        8 |   128<sup><code>‡</code></sup>      |        4 |                 4 |
+
+<br />
+<br />
+<small>* Private GPUs may be available via preemptable jobs</small>
+
+<br />
+<small>† Includes 2 Interactive nodes, 32 V100 compute nodes and 4 T4 infer nodes</small>
+
+<br />
+<small>‡ Large multi-node jobs may queue for a <strong>very long</strong> time</small>
+</script></section><section data-markdown><script type="text/template">
+## Does data movement slow down my jobs? <!-- .element: class="r-fit-text" -->
+
+| Data movement           | JADE     | Bede     | TUoS                                   |
+|-------------------------|:--------:|:--------:|:--------------------------------------:|
+| **GPU-GPU NVLink**      | &#10003; | &#10003; | &#65374;<sup><code>*</code></sup>      |
+| **CPU-GPU NVLink**      | &#10008; | &#10003; | &#10008;<sup><code>&nbsp;</code></sup> |
+
+<br />
+<br />
+<small>* Some UoS GPU nodes support GPU-GPU NVLink</small>
+
+<aside class="notes"></aside></script></section></section><section ><section data-markdown><script type="text/template">
+### Getting Access: JADE
+
+<iframe src="https://docs.hpc.shef.ac.uk/en/latest/other-uk-hpc-resources/jade2.html" height="900" width="1600"></iframe>
+
+[docs.hpc.shef.ac.uk/other-uk-hpc-resources/jade2.html](https://docs.hpc.shef.ac.uk/en/latest/other-uk-hpc-resources/jade2.html)
+</script></section><section data-markdown><script type="text/template">
+### Getting Access: JADE
+
+<iframe src="https://bit.ly/jade2-access" height="900" width="1600"></iframe>
+
+[bit.ly/jade2-access](https://bit.ly/jade2-access)
+
+<aside class="notes"><p>A member of the RSE team (probably Twin) will then be in touch.</p>
+</aside></script></section><section data-markdown><script type="text/template">
+### Getting Access: JADE
+
+<iframe src="https://www.jade.ac.uk/access/" height="900" width="1600"></iframe>
+
+[www.jade.ac.uk/access](https://www.jade.ac.uk/access/)
+
+<aside class="notes"><p>More information can be found on the jade.ac.uk website</p>
+</aside></script></section><section data-markdown><script type="text/template">
+<!-- ### Getting Access: JADE -->
+
+tier-2-hpc-support-group@sheffield.ac.uk <!-- .element: class="r-fit-text" -->
+
+<aside class="notes"><p>If in doubt, get in touch.</p>
+</aside></script></section></section><section ><section data-markdown><script type="text/template">
+### Getting Access: Bede
+
+<iframe src="https://docs.hpc.shef.ac.uk/en/latest/other-uk-hpc-resources/bede.html" height="900" width="1600"></iframe>
+
+[docs.hpc.shef.ac.uk/en/latest/other-uk-hpc-resources/bede.html](https://docs.hpc.shef.ac.uk/en/latest/other-uk-hpc-resources/bede.html)
+</script></section><section data-markdown><script type="text/template">
+### Getting Access: Bede
+
+![https://n8cir.org.uk/supporting-research/facilities/bede/docs/bede_registrations/ Screenshot](assets/img/website-screenshots/n8cir.org.uk/docs-bede_registrations.png) <!-- .element: class="web-screenshot" -->
+
+[n8cir.org.uk/supporting-research/facilities/bede/docs/bede_registrations](https://n8cir.org.uk/supporting-research/facilities/bede/docs/bede_registrations/)
+
+<aside class="notes"><p>Bede - fill in the form, get in touch if needed. Some restrictions.</p>
+</aside></script></section><section data-markdown><script type="text/template">
+### Getting Access: Bede
+
+<!-- <iframe src="https://n8cir.org.uk/supporting-research/facilities/bede/bede-application/" height="900" width="1600"></iframe> -->
+
+![Bede Application Form Screenshot](assets/img/website-screenshots/n8cir.org.uk/docs-bede-applications.png) <!-- .element: class="web-screenshot" -->
+
+[n8cir.org.uk/supporting-research/facilities/bede/bede-application](https://n8cir.org.uk/supporting-research/facilities/bede/bede-application/)
+
+<aside class="notes"><p>Bede - fill in the form, get in touch if needed. Some restrictions.</p>
+<p>This is a relatively thorough form, get in touch with us if you need any help.</p>
+</aside></script></section><section data-markdown><script type="text/template">
+tier-2-hpc-support-group@sheffield.ac.uk <!-- .element: class="r-fit-text" -->
+
+<aside class="notes"><p>If in doubt, get in touch.</p>
+</aside></script></section></section><section ><section data-markdown><script type="text/template">
+### Getting Access: Other HPC facilities
+
+<iframe src="https://docs.hpc.shef.ac.uk/en/latest/other-uk-hpc-resources.html" height="900" width="1600"></iframe>
+
+[docs.hpc.shef.ac.uk/en/latest/other-uk-hpc-resources.html](https://docs.hpc.shef.ac.uk/en/latest/other-uk-hpc-resources.html)
+
+<aside class="notes"><p>If ShARC, Bessemer, Bede or Jade do not meet your needs, there are routes to gain access to other UK HPC facilities.</p>
+<p>The first place to look is the &quot;Other UK hpc resources&quot; page of docs.hpc.shef.ac.uk website</p>
+</aside></script></section><section data-markdown><script type="text/template">
+### EPSRC Access to HPC Calls
+
+<iframe src="https://www.ukri.org/opportunity/access-to-high-performance-computing/" height="900" width="1600"></iframe>
+
+[ukri.org/opportunity/access-to-high-performance-computing](https://www.ukri.org/opportunity/access-to-high-performance-computing/)
+
+<aside class="notes"><p>EPRSC have been running calls for access ~ twice a year, for Tier 1 &amp; Tier 2</p>
+</aside></script></section></section><section ><section data-markdown><script type="text/template">
+## Using JADE and Bede
+
+<aside class="notes"><p>Using the JADE and Bede is very similar to using Bessemer</p>
+</aside></script></section><section data-markdown><script type="text/template">
+## Using JADE and Bede: SSH
+
+```bash
+# JADE2
+ssh USERNAME@jade2.hartree.stfc.ac.uk
+```
+
+```bash
+# Bede
+ssh USERNAME@login1.bede.dur.ac.uk
+```
+
+```bash
+# Bessemer
+ssh USERNAME@bessemer.shef.ac.uk
+```
+
+<aside class="notes"><p>All systems are connected to via ssh</p>
+</aside></script></section><section data-markdown><script type="text/template">
+## Using JADE and Bede: Module Environments
+
+```bash
+# List available modules
+module avail
+
+# Print module whatis information
+module whatis <module>
+
+# Load a module by name
+module load <module>
+
+# Remove / Unload a module 
+module unload <module>
+
+# List loaded modules
+module list
+
+# Show module details
+module show <module>
+```
+
+[modules.readthedocs.io](https://modules.readthedocs.io/en/latest/)
+</script></section><section data-markdown><script type="text/template">
+## Using JADE and Bede: Slurm
+
+```bash
+# List queued jobs for $USER
+squeue -u $USER
+```
+
+```bash
+# Submit a batch job
+sbatch job.sh
+```
+
+![SLURM Logo](assets/img/thirdparty/slurm-logo.png) <!-- .element: height="300px" style="background:#fff; padding: 40px;" -->
+
+<aside class="notes"><p>The 3 systems all use Slurm for job scheduling, so commands are very similar</p>
+</aside></script></section><section data-markdown><script type="text/template">
+## Using JADE and Bede: Batch Jobs
+
+<div class="three-col">
+
+<div class="one-third">
+
+### JADE
+
+```slurm
+#! /usr/bin/env bash
+
+#SBATCH --partition=small
+
+
+#SBATCH --time=12:00:00
+#SBATCH --nodes=1
+#SBATCH --gres=gpu:1
+
+
+
+# Run commands
+module load cuda
+nvcc --version
+```
+
+</div>
+<div class="one-third">
+
+### Bede
+
+```slurm
+#! /usr/bin/env bash
+
+#SBATCH --partition=gpu
+#SBATCH --account=<project>
+
+#SBATCH --time=12:00:00
+#SBATCH --nodes=1
+#SBATCH --gres=gpu:1
+
+
+
+# Run commands
+module load cuda
+nvcc --version
+```
+
+</div>
+<div class="one-third">
+
+### Bessemer
+
+```slurm
+#! /usr/bin/env bash
+
+#SBATCH --partition=gpu
+#SBATCH --qos=gpu
+
+#SBATCH --time=12:00:00
+#SBATCH --nodes=1
+#SBATCH --gpus-per-node=1
+#SBATCH --cpus-per-gpu=10
+#SBATCH --mem=48G
+
+# Run commands
+module load CUDA
+nvcc --version
+```
+
+</div>
+</div>
+
+<br />
+
+* `1` GPU
+* `1/NGPUs` of the node's CPUs and memory
+* 12 hour max runtime
+* Loads the default CUDA module
+
+<aside class="notes"><p>Batch jobs are the prefferred (or only) mechanism for running GPU jobs on the systems</p>
+<p>In general, batch scripts will be very similar, but with small / subtle differences</p>
+</aside></script></section><section data-markdown><script type="text/template">
+## Using JADE and Bede: Containers
+
+```bash
+singularity exec path/to/image.sif exec <command>
+```
+
+![Singularity Logo](assets/img/thirdparty/singularity-logo.png)  <!-- .element: height="300px" -->
+
+<span>* Extra steps required for Bede due to PPC64LE CPU architecture</span>
+</script></section></section><section  data-markdown><script type="text/template">
+## Next Steps
+
+<!-- .slide: class="bigger-content" -->
+
+<br />
+
+[docs.hpc.shef.ac.uk](https://docs.hpc.shef.ac.uk/)
+
+<br />
+
+[tier-2-hpc-support-group@sheffield.ac.uk](mailto:tier-2-hpc-support-group@sheffield.ac.uk)
+
+<br />
+
+Book a Code Clinic:
+
+[rse.shef.ac.uk/support/code-clinic](https://rse.shef.ac.uk/support/code-clinic)
+
+<br />
+
+![Research Software Engineering Sheffield Logo](assets/img/logos/rse-logoonly-stroke.png) <!-- .element: height="180px;" style="margin-left: 0px; margin-right: 260px"-->
+![The University of Sheffield Logo](assets/img/logos/TUOS_PRIMARY_LOGO_FULL_COLOUR.png) <!-- .element: height="180px;" -->
+
+<aside class="notes"><p>If you need to find any more information, head to the Sheffield HPC Documentation as a first point of call.</p>
+<p>Alternatively, email <a href="mailto:&#x74;&#x69;&#101;&#x72;&#45;&#x32;&#x2d;&#104;&#x70;&#99;&#x2d;&#115;&#x75;&#112;&#112;&#111;&#x72;&#x74;&#x2d;&#103;&#114;&#111;&#117;&#x70;&#64;&#x73;&#104;&#101;&#102;&#x66;&#105;&#x65;&#x6c;&#x64;&#46;&#97;&#99;&#46;&#x75;&#107;">&#x74;&#x69;&#101;&#x72;&#45;&#x32;&#x2d;&#104;&#x70;&#99;&#x2d;&#115;&#x75;&#112;&#112;&#111;&#x72;&#x74;&#x2d;&#103;&#114;&#111;&#117;&#x70;&#64;&#x73;&#104;&#101;&#102;&#x66;&#105;&#x65;&#x6c;&#x64;&#46;&#97;&#99;&#46;&#x75;&#107;</a> which will reach a member of the RSE group or IT Services.</p>
+<p>You can also book a code-clinic session for a 1:1 chat about any programming problems, or advice on best practice or using HPC.</p>
+</aside></script></section><section ><section data-markdown><script type="text/template">
+## Extra Slides
+
+<!-- .slide: data-visibility="uncounted"--->
+</script></section><section data-markdown><script type="text/template">
+## How long can my jobs run for?
+
+<!-- .slide: data-visibility="uncounted"--->
+
+| Scale          | JADE               | Bede   | Bessemer   |
+|----------------|:------------------:|:------:|:----------:|
+| **Single-GPU** | 6 days             | 2 days | 7 days     |
+| **Multi-GPU**  | 1 day&nbsp;&nbsp;  | 2 days | 7 days     |
+
+<br />
+
+Check-pointing can enable longer running experiments</script></section></section></div>
+    </div>
+
+    <script src="./dist/reveal.js"></script>
+
+    <script src="./plugin/markdown/markdown.js"></script>
+    <script src="./plugin/highlight/highlight.js"></script>
+    <script src="./plugin/zoom/zoom.js"></script>
+    <script src="./plugin/notes/notes.js"></script>
+    <script src="./plugin/math/math.js"></script>
+    <script>
+      function extend() {
+        var target = {};
+        for (var i = 0; i < arguments.length; i++) {
+          var source = arguments[i];
+          for (var key in source) {
+            if (source.hasOwnProperty(key)) {
+              target[key] = source[key];
+            }
+          }
+        }
+        return target;
+      }
+
+      // default options to init reveal.js
+      var defaultOptions = {
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        transition: 'default', // none/fade/slide/convex/concave/zoom
+        plugins: [
+          RevealMarkdown,
+          RevealHighlight,
+          RevealZoom,
+          RevealNotes,
+          RevealMath
+        ]
+      };
+
+      // options from URL query string
+      var queryOptions = Reveal().getQueryHash() || {};
+
+      var options = extend(defaultOptions, {"transition":"slide","width":1920,"height":1080,"slideNumber":"c"}, queryOptions);
+    </script>
+
+
+    <script>
+      Reveal.initialize(options);
+    </script>
+  </body>
+</html>
