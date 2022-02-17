@@ -90,6 +90,8 @@ Research Software Engineer
 
 [![GitHub Mark](assets/img/logos/GitHub-Mark-Light-64px.png) <!-- .element: style="vertical-align:middle; height:48px;" --> github.com/ptheywood](https://github.com/ptheywood)
 
+[ptheywood.uk/hpc-beyond-sheffield-jade-and-bede-presentation/](https://ptheywood.uk/hpc-beyond-sheffield-jade-and-bede-presentation/)
+
 note:
 
 Overview.
