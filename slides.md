@@ -311,7 +311,7 @@ Large volumes of CPU-GPU data movement (NVLink)
 
 Not all applications are POWER9 compatible
 
-.i.e no MATLAB
+i.e no MATLAB
 
 
 
