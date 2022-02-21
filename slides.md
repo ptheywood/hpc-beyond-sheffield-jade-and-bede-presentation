@@ -577,7 +577,7 @@ squeue -u $USER
 sbatch job.sh
 ```
 
-![SLURM Logo](assets/img/thirdparty/slurm-logo.png) <!-- .element: height="300px" style="background:#fff; padding: 40px;" -->
+![SLURM Logo](assets/img/logos/slurm-logo.png) <!-- .element: height="300px" style="background:#fff; padding: 40px;" -->
 
 Note: The 3 systems all use Slurm for job scheduling, so commands are very similar
 
@@ -674,7 +674,7 @@ In general, batch scripts will be very similar, but with small / subtle differen
 singularity exec path/to/image.sif exec <command>
 ```
 
-![Singularity Logo](assets/img/thirdparty/singularity-logo.png)  <!-- .element: height="300px" -->
+![Singularity Logo](assets/img/logos/singularity-logo.png)  <!-- .element: height="300px" -->
 
 <span>* Extra steps required for Bede due to PPC64LE CPU architecture</span>
 
