@@ -6,11 +6,14 @@
 >
 > There will be a focus on the JADE and Bede GPU-based Tier 2 systems which TUoS is affiliated with.
 
+
 ---
 
 This is a reveal.js presentation, written in markdown using [webpro/reveal-md](https://github.com/webpro/reveal-md)
 
 It was originally presented as part of the [RSE Sheffield LunchBytes series on 2022-02-17](https://rse.shef.ac.uk/events/lunchbytes-2022-02-17.html).
+
+[![CC BY 4.0](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg)][cc-by]
 
 ## Building the presentation
 
@@ -54,3 +57,14 @@ google-chrome --app="http://localhost:1948/slides.md"
 ### Speaker view
 
 Press `s` to open speaker view when running via a server
+
+## Licence
+
+Slide contents are licensed under a
+[Creative Commons Attribution 4.0 International License][cc-by].
+
+Logos and images in `assets/img/logos` and `/assets/img/thirdparty` are copyright their respective owners.
+
+[![CC BY 4.0](https://i.creativecommons.org/l/by/4.0/88x31.png)][cc-by]
+
+[cc-by]: http://creativecommons.org/licenses/by/4.0/
