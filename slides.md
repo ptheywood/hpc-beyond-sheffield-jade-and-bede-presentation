@@ -527,7 +527,7 @@ ssh USERNAME@jade2.hartree.stfc.ac.uk
 
 ```bash
 # Bede
-ssh USERNAME@login1.bede.dur.ac.uk
+ssh USERNAME@bede.dur.ac.uk
 ```
 
 ```bash
